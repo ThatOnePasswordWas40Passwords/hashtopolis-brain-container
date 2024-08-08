@@ -3,7 +3,7 @@ name: Ensure VERSION file bumped
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   changed_files:
@@ -16,7 +16,7 @@ jobs:
 
       - name: Base SHA
         id: base-sha
-        run: echo "sha=$(git rev-parse origin/main)" >> $GITHUB_OUTPUT
+        run: echo "sha=$(git rev-parse origin/master)" >> $GITHUB_OUTPUT
 
       - name: Ensure VERSION file has been updated.
         id: changed-version-file
